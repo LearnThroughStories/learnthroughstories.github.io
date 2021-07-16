@@ -50,6 +50,10 @@
   content: "\f16d";
 }
 
+.icon-youtube:before { 
+  content: '\f16a'; 
+}
+
 .fa {
   font-family: 'font-awesome';
 }
@@ -193,7 +197,7 @@ h2 {
     grid-column-start: social;
     width: 100%;
     display: grid;
-    grid-template-columns: 20% 20% 20% 20%;
+    grid-template-columns: 20% 20% 20% 20% 20%;
     grid-template-rows: 1.8rem;
     justify-content: end;
     /* align-content: center; */
