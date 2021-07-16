@@ -1,0 +1,39 @@
+.yu2fvl {
+  z-index: 9999;
+  top: 0;
+}
+
+.yu2fvl-iframe {
+  display: block;
+  height: 100%;
+  width: 100%;
+  border: 0;
+}
+
+.yu2fvl-overlay {
+  z-index: 9998;
+  background: #000;
+  opacity: 0.8;
+}
+
+.yu2fvl-close {
+  position: absolute;
+  top: -16px;
+  right: -6px;
+  width: 1.55rem;
+  height: 1.55rem;
+  line-height: 1.55rem;
+  background-color:black;
+  font-size: 1.5rem;
+  color: #fff;
+  border-radius: 50%;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  z-index: 9999;
+}
+
+.yu2fvl-close:hover {
+  background-color:yellow;
+  color: black;
+}

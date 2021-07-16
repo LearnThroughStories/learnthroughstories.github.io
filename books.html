@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeTS: Learn Through Stories. Our Books</title>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5X773H3F3R"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+  
+      gtag('config', 'G-5X773H3F3R');
+    </script>
+    <link rel="stylesheet" href="./assets/css/bookblock.css" />
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/books-base.css">
+    <link rel="stylesheet" href="assets/css/books.css">
+    <style>
+        @media only screen and (max-width: 720px) {
+            #middle {
+                font-size: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="books-container">
+        <nav id="navbar">
+            <div id="logo">
+                <a href="index.html"><img src="assets/img/lets-logo-120.png"></a>
+            </div>
+            <ul id="links" class="nav">
+                <li class="nav-item"><a href="process.html">OUR PROCESS</a></li>
+                <li class="nav-item"><a href="gallery.html">GALLERY</a></li>
+                <li class="nav-item active-page"><a href="books.html">BOOKS</a></li>
+                <li class="nav-item"><a href="aboutus.html">ABOUT US</a></li>
+            </ul>
+        </nav>
+        <div id="books-top">
+            <!-- <img src="assets/img/books-top.png"> -->
+        </div>
+        <div id="book-open"> </div>         <!-- Placeholder for book modal -->
+        <div id="shelf">
+            <div id="ck" class="grid-cell">
+                <div class="book-on-shelf" onclick="openBook('CleverKalyani');">
+                    <img src='assets/img/books/CleverKalyani/00-small.jpg'>
+                </div>
+            </div>
+
+            <div id="bm" class="grid-cell">
+                <div class="book-on-shelf" onclick="openBook('BlueMagicBox');">
+                    <img src='assets/img/books/BlueMagicBox/00-small.jpg'>
+                </div>
+            </div>
+
+            <div id="bc1" class="grid-cell">
+                <div class="book-on-shelf" onclick="openBook('BoyandCalf_v1');">
+                    <img src='assets/img/books/BoyandCalf_v1/00-small.jpg'>
+                </div>
+            </div>
+
+            <div id="bc2" class="grid-cell">
+                <div class="book-on-shelf" onclick="openBook('BoyandCalf_v2');">
+                    <img src='assets/img/books/BoyandCalf_v2/00-small.jpg'>
+                </div>
+            </div>
+
+            <div id="bc3" class="grid-cell">
+                <div class="book-on-shelf" onclick="openBook('BoyandCalf_v3');">
+                    <img src='assets/img/books/BoyandCalf_v3/00-small.jpg'>
+                </div>
+            </div>
+
+            <div id="cm" class="grid-cell">
+                <div class="book-on-shelf" onclick="openBook('CrazyMonkey');">
+                    <img src='assets/img/books/CrazyMonkey/00-small.jpg'>
+                </div>
+            </div>
+
+            <div id="er" class="grid-cell">
+                <div class="book-on-shelf" onclick="openBook('Eraseshwara');">
+                    <img src='assets/img/books/Eraseshwara/00-small.jpg'>
+                </div>
+            </div>
+
+            <div id="fc" class="grid-cell">
+                <div class="book-on-shelf" onclick="openBook('FlyingChair');">
+                    <img src='assets/img/books/FlyingChair/00-small.jpg'>
+                </div>
+            </div>
+
+            <div id="kh" class="grid-cell">
+                <div class="book-on-shelf" onclick="openBook('Khichdi');">
+                    <img src='assets/img/books/Khichdi/00-small.jpg'>
+                </div>
+            </div>
+
+            <div id="ma" class="grid-cell">
+                <div class="book-on-shelf" onclick="openBook('MayaAndAaharika');">
+                    <img src='assets/img/books/MayaAndAaharika/00-small.jpg'>
+                </div>
+            </div>
+
+            <div id="mr" class="grid-cell">
+                <div class="book-on-shelf" onclick="openBook('MonsterRhymed');">
+                    <img src='assets/img/books/MonsterRhymed/00-small.jpg'>
+                </div>
+            </div>
+
+            <div id="mg" class="grid-cell">
+                <div class="book-on-shelf" onclick="openBook('Monster_Graded');">
+                    <img src='assets/img/books/Monster_Graded/00-small.jpg'>
+                </div>
+            </div>
+
+            <div id="rc" class="grid-cell">
+                <div class="book-on-shelf" onclick="openBook('RescueFromTheClaw');">
+                    <img src='assets/img/books/RescueFromTheClaw/00-small.jpg'>
+                </div>
+            </div>
+
+            <div id="ro" class="grid-cell">
+                <div class="book-on-shelf" onclick="openBook('Rokuuroo');">
+                    <img src='assets/img/books/Rokuuroo/00-small.jpg'>
+                </div>
+            </div>
+
+            <div id="tc" class="grid-cell">
+                <div class="book-on-shelf" onclick="openBook('TheCircus');">
+                    <img src='assets/img/books/TheCircus/00-small.jpg'>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <div id="logotext"> <img src="assets/img/ftr-logo.png"> </div>
+        <div id="social">
+          <a href="mailto:contactletsfoundation@gmail.com?body=Dear%20LeTS%20team,">
+                <span class="fa icon-mail"></span>
+          </a>
+          <a href="#"> <span class="fa icon-facebook"></span></a>
+          <a href="#"> <span class="fa icon-instagram"></span></a>
+          <a href="#"> <span class="fa icon-linkedin"></span></a>
+        </div>
+      </div>
+      <div style="height: 1rem; background-color: grey; width: 100%;"/>
+        
+    </div>
+
+    <script type="text/javascript" src="assets/js/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="assets/js/modernizr.custom.js"></script>
+    <script type="text/javascript" src="assets/js/jquerypp.custom.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.bookblock.js"></script>
+    <script type="text/javascript" src="assets/js/lets.js"></script>
+
+</body>

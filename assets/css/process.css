@@ -1,0 +1,131 @@
+#process-container {
+  width: 100%;
+  background-image: 
+    -webkit-image-set(
+      url(../img/default-bg-1200.webp) 1x,
+      url(../img/default-bg-1200.jpg) 1x
+    );
+  background-image: 
+    image-set(
+      url(../img/default-bg-1200.webp) 1x,
+      url(../img/default-bg-1200.jpg) 1x
+    );
+}
+
+#process-top {
+  padding-top: 2rem;
+  width: 100%;
+  max-width: 100%;
+}
+
+#process-top img {
+  width: 100%;
+  height: auto;
+}
+
+.call-for-stories-wrapper {
+  width: 67%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.call-for-stories {
+  display: grid;
+  justify-content: justify-content;
+  justify-items: center;
+  width: 100%;
+  grid-template-columns: 33% 33% 33%;
+  grid-template-areas: "left middle right";
+}
+
+.call-for-stories img {
+  width: 90%;
+  max-height: 150px;
+  object-fit: contain;
+  box-shadow: 2px 2px 4px 0 rgb(0 0 0 / 65%);
+  transition: transform .2s; /* Animation */
+}
+
+.call-for-stories img:hover {
+  transform: scale(1.2);
+}
+
+.process-grid {
+  width: 100%;
+  display: grid;
+  position: relative;
+  grid-template-columns: 20% 60% 20%;
+  grid-template-areas: "left middle right";
+}
+
+.process-grid .left {
+  grid-area: left; /* for parent */
+
+  display: grid; /* to force nested thumbnail image closer to text */
+  grid-template-columns: 35% [thumb]50% 15%;
+  grid-template-rows: auto;
+  align-content: space-between;
+}
+.process-grid .left .thumb-wrapper {
+  grid-column-start: thumb;
+  width: 100%;
+}
+
+.process-grid .left img {
+  width: 100%;
+  max-width: 100px; /* images are 100x100*/
+  height: auto;
+  object-fit: contain;
+}
+
+.process-grid .middle {
+  grid-area: middle;
+  line-height: 160%;
+  font-size: 1rem;
+  font-weight: 400;
+  color: rgb(56, 63, 57);
+}
+
+.process-grid.right {
+  grid-area: right;
+  display: flex;
+}
+
+.process-grid .middle div {
+  text-align: start;
+  margin-bottom: 1.5rem;
+}
+.process-grid .middle div:last-of-type {
+  text-align: start;
+  margin-bottom: 0em;
+}
+
+.process-grid .middle h2 {
+  text-align: start;
+  font-size: 1.2em;
+  margin-bottom: 1em;
+  line-height: 150%;
+}
+
+.process-grid #process-bottom {
+  position: absolute;
+  padding: 10px;
+  bottom: -12rem;
+  /* so that only the tree is to the right, but the kids are below the text*/
+  right: 0;
+  width: 57%;
+}
+
+.spacer {
+  display: block;
+  width: 10px;
+  height: 0rem;
+  /* border-left: 2px dotted gray; */
+}
+
+.process-grid #process-bottom img {
+  width: 100%;
+  height: 100%;
+}

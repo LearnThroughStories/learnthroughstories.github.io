@@ -1,0 +1,142 @@
+#books-container {
+  width: 100%;
+  /* background-image: url("../img/default-bg.jpg"); */
+  background-position-y: 50%;
+}
+
+#books-top {
+  padding-top: 2rem;
+  width: 100%;
+  max-width: 100%;
+}
+
+#shelf {
+  margin-left: auto;
+  margin-right: auto;
+  width: 95%;
+  /* aspect-ratio: 140 / 220; */
+  display: grid;
+  grid-template-rows: repeat(4, 25%);
+  grid-template-columns: repeat(6, 16.66%);
+  grid-template-areas: 
+        "ck  ck  er kh ma rc"
+        "ck  ck  ro ro bm bc1"
+        "tc  cm  ro ro mr mr"
+        "bc2 bc3 fc mg mr mr";
+}
+
+.grid-cell {
+  padding: 15px 15px;
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (max-width: 800px) {
+  #shelf {
+    grid-template-rows: repeat(6, 16.66%);
+    grid-template-columns: repeat(4, 25%);
+    grid-template-areas: 
+          "ck  ck er kh "
+          "ck  ck  ma rc"
+          "bm  bc1  ro ro"
+          "tc  cm  ro ro"
+          "fc  mg  mr mr"
+          "bc2 bc3 mr mr";
+  }
+  .grid-cell {
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.book-on-shelf {
+  /* margin: 3rem 2em; */
+  /* max-height: 220px;
+  max-width: 143px; */
+  height: 100%;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 9px 20px 0 rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  transition: box-shadow 0.3s linear;
+  border-left: 1px solid grey;
+  border-bottom: 1px solid grey;
+}
+
+.book-on-shelf img {
+  width: 100%;
+  height: 100%;
+  transform-origin: 0 50%;
+  transform: rotateY(0);
+  transition: all 0.45s ease;
+}
+
+.book-on-shelf::after,
+.book-on-shelf::before,
+.book img,
+.book {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+/* On hover, thicken the shadow on the container and on the image, and "rotate" the image along the Y axis */
+.book-on-shelf:hover {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25), 0 9px 20px 0 rgba(0, 0, 0, 0.45);
+}
+
+.book-on-shelf:hover img {
+  transform: rotateY(-25deg);
+  box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Book placements */
+#ck {
+  grid-area: ck;
+}
+#bm {
+  grid-area: bm;
+}
+#bc1 {
+  grid-area: bc1;
+}
+
+#bc2 {
+  grid-area: bc2;
+}
+
+#bc3 {
+  grid-area: bc3;
+}
+
+#cm {
+  grid-area: cm;
+}
+#er {
+  grid-area: er;
+}
+#fc {
+  grid-area: fc;
+}
+#kh {
+  grid-area: kh;
+}
+#ma {
+  grid-area: ma;
+}
+#mr {
+  grid-area: mr;
+}
+#mg {
+  grid-area: mg;
+}
+#rc {
+  grid-area: rc;
+}
+#ro {
+  grid-area: ro;
+}
+#tc {
+  grid-area: tc;
+}

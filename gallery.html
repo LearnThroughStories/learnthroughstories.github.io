@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LeTS: Learn Through Stories. Gallery</title>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5X773H3F3R"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+  
+      gtag('config', 'G-5X773H3F3R');
+    </script>
+  
+    <script src="assets/js/jquery-3.5.1.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/nanogallery2@3/dist/css/nanogallery2.min.css" rel="stylesheet"
+        type="text/css">
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/nanogallery2@3/dist/jquery.nanogallery2.min.js"></script>
+    <link rel="stylesheet" href="./assets/css/base.css" />
+    <style>
+        .nGY2 .toolbar .label .title {
+            font-family: "Hepta Slab", serif;
+            font-size: 1.3rem;
+        }
+
+        #gallery-container {
+            width: 100%;
+            background-image: 
+                -webkit-image-set(
+                    url(assets/img/default-bg-1200.webp) 1x,
+                    url(assets/img/default-bg-1200.jpg) 1x
+                );
+            background-image: 
+                image-set(
+                    url(../img/default-bg-1200.webp) 1x,
+                    url(../img/default-bg-1200.jpg) 1x
+                );
+        }
+
+        #nanogallery {
+            padding-top: 2rem;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="gallery-container">
+        <nav id="navbar">
+            <div id="logo">
+                <a href="index.html"><img src="assets/img/lets-logo-120.png"></a>
+            </div>
+            <ul id="links" class="nav">
+                <li class="nav-item"><a href="process.html">OUR PROCESS</a></li>
+                <li class="nav-item active-page"><a href="gallery.html">GALLERY</a></li>
+                <li class="nav-item"><a href="books.html">BOOKS</a></li>
+                <li class="nav-item"><a href="aboutus.html">ABOUT US</a></li>
+            </ul>
+        </nav>
+        <div id="nanogallery">
+        </div>
+        <div class="spacer"></div>
+    </div>
+    <div id="footer">
+        <div id="logotext"> <img src="assets/img/ftr-logo.png"> </div>
+        <div id="social">
+          <a href="mailto:contactletsfoundation@gmail.com?body=Dear%20LeTS%20team,">
+                <span class="fa icon-mail"></span>
+          </a>
+          <a href="#"> <span class="fa icon-facebook"></span></a>
+          <a href="#"> <span class="fa icon-instagram"></span></a>
+          <a href="#"> <span class="fa icon-linkedin"></span></a>
+        </div>
+    </div>
+    <div style="height: 1rem; background-color: grey; width: 100%;"/>
+  
+<script>
+    jQuery(document).ready(function () {
+        jQuery("#nanogallery").nanogallery2({
+            itemsBaseURL: "assets/img/gallery/",
+            galleryMaxRows: 1,
+            galleryDisplayMode: 'rows',
+            gallerySorting: 'random',
+            thumbnailDisplayOrder: 'random',
+            thumbnailHeight: '200', thumbnailWidth: '200',
+            displayTitle: false,
+            titleFontSize: "2em",
+            imageTransition: 'slideAppear',
+
+            descriptionFontSize: "2em",
+            descriptionMultiLine: true,
+            items: [
+
+                {
+                    src: "large/Alka_AtConference_UKIndia.jpg",
+                    srct: "thumb/Alka_AtConference_UKIndia.jpg",
+                    title: `Prof. Alka Hingorani presenting LeTS at the UK-India “Future Tech Festival”, New Delhi, Dec. 2018`,
+                    height: 1024, width: 683,
+                    imgtWidth: 400, imgtHeight: 266,
+                },
+
+                {
+                    src: "large/Alka_GSSSKhun_2014.jpg",
+                    srct: "thumb/Alka_GSSSKhun_2014.jpg",
+                    title: `Prof. Alka Hingorani engaging students at the GSS School, Khun, Himachal Pradesh`,
+                    height: 1024, width: 653,
+                    imgtWidth: 400, imgtHeight: 255,
+                },
+
+                {
+                    src: "large/ArtMaterials.jpg",
+                    srct: "thumb/ArtMaterials.jpg",
+                    title: ``,
+                    height: 1024, width: 675,
+                    imgtWidth: 400, imgtHeight: 263,
+                },
+
+                {
+                    src: "large/Artwork_Crows_01.jpg",
+                    srct: "thumb/Artwork_Crows_01.jpg",
+                    title: `Artwork for the animation film “The Hungry Crow”`,
+                    height: 1024, width: 576,
+                    imgtWidth: 400, imgtHeight: 225,
+                },
+
+                {
+                    src: "large/Artwork_Crows_02.jpg",
+                    srct: "thumb/Artwork_Crows_02.jpg",
+                    title: `Artwork for the animation film “The Hungry Crow”`,
+                    height: 1024, width: 576,
+                    imgtWidth: 400, imgtHeight: 225,
+                },
+
+                {
+                    src: "large/Artwork_Crows_03.jpg",
+                    srct: "thumb/Artwork_Crows_03.jpg",
+                    title: `Artwork for the animation film “The Hungry Crow”`,
+                    height: 1024, width: 576,
+                    imgtWidth: 400, imgtHeight: 225,
+                },
+
+                {
+                    src: "large/Artwork_Fence_03.jpg",
+                    srct: "thumb/Artwork_Fence_03.jpg",
+                    title: `Student artwork for the story “Clever Kalyani”`,
+                    height: 800, width: 800,
+                    imgtWidth: 400, imgtHeight: 400,
+                },
+
+                {
+                    src: "large/Artwork_Monkeys_01.jpg",
+                    srct: "thumb/Artwork_Monkeys_01.jpg",
+                    title: `Artwork by S. Hemavathi (Std. VII) for “The Crazy Monkey” at the Agastya International Foundation, Kuppam, Andhra Pradesh`,
+                    height: 1024, width: 725,
+                    imgtWidth: 400, imgtHeight: 283,
+                },
+
+                {
+                    src: "large/Artwork_Monster_PencilDrawing_01.jpg",
+                    srct: "thumb/Artwork_Monster_PencilDrawing_01.jpg",
+                    title: `Student artwork (Std. VII) for “The Monster and the Little Boy”, Gram Mangal School, Dahanu, Maharashtra`,
+                    height: 450, width: 800,
+                    imgtWidth: 225, imgtHeight: 400,
+                },
+
+                {
+                    src: "large/Artwork_Monster.jpg",
+                    srct: "thumb/Artwork_Monster.jpg",
+                    title: `Artwork by Rupesh Vadhav (Std. VII) for "The Monster and The Little Boy", Gram Mangal School, Dahanu, Maharashtra`,
+                    height: 564, width: 800,
+                    imgtWidth: 282, imgtHeight: 400,
+                },
+
+                {
+                    src: "large/Artwork_MonsterFace.jpg",
+                    srct: "thumb/Artwork_MonsterFace.jpg",
+                    title: `Student artwork (Std. VII) for “The Monster and the Little Boy”, Gram Mangal School, Dahanu, Maharashtra`,
+                    height: 885, width: 800,
+                    imgtWidth: 400, imgtHeight: 361,
+                },
+
+                {
+                    src: "large/Artwork_Mountains_02.jpg",
+                    srct: "thumb/Artwork_Mountains_02.jpg",
+                    title: `Artwork by S. Yamuha (Std. VII) for “The Monster and the Little Boy”, Gram Mangal School, Dahanu, Maharashtra`,
+                    height: 1024, width: 725,
+                    imgtWidth: 400, imgtHeight: 283,
+                },
+
+                {
+                    src: "large/Artwork_Mountains.jpg",
+                    srct: "thumb/Artwork_Mountains.jpg",
+                    title: `Student artwork (Std. VIII-IX) for “Rescue from the Claw”, KGBV School, Gudupalle, Andhra Pradesh`,
+                    height: 1024, width: 682,
+                    imgtWidth: 400, imgtHeight: 266,
+                },
+
+                {
+                    src: "large/Artwork_NightSky_05.jpg",
+                    srct: "thumb/Artwork_NightSky_05.jpg",
+                    title: `Student artwork for the story “Night Sky”`,
+                    height: 1024, width: 725,
+                    imgtWidth: 400, imgtHeight: 283,
+                },
+
+                {
+                    src: "large/Artwork_Peacock_FoundMaterial_06.jpg",
+                    srct: "thumb/Artwork_Peacock_FoundMaterial_06.jpg",
+                    title: `Found-material artwork for “Rokuroo”, KGBV School, Gudupalle, Andhra Pradesh`,
+                    height: 1024, width: 682,
+                    imgtWidth: 400, imgtHeight: 266,
+                },
+
+                {
+                    src: "large/Artwork_Peacock_FoundMaterial_08.jpg",
+                    srct: "thumb/Artwork_Peacock_FoundMaterial_08.jpg",
+                    title: `Found-material artwork for “Rokuroo”, KGBV School, Gudupalle, Andhra Pradesh`,
+                    height: 1024, width: 682,
+                    imgtWidth: 400, imgtHeight: 266,
+                },
+
+                {
+                    src: "large/Artwork_Peacock_FoundMaterial_10.jpg",
+                    srct: "thumb/Artwork_Peacock_FoundMaterial_10.jpg",
+                    title: `Found-material artwork for “Rokuroo” by T. Lalitha (Std. VIII), KGBV School, Gudupalle, Andhra Pradesh`,
+                    height: 1024, width: 682,
+                    imgtWidth: 400, imgtHeight: 266,
+                },
+
+                {
+                    src: "large/Artwork_Peacock_FoundMaterial_11.jpg",
+                    srct: "thumb/Artwork_Peacock_FoundMaterial_11.jpg",
+                    title: `Found-material artwork for “Rokuroo”, KGBV School, Gudupalle, Andhra Pradesh`,
+                    height: 1024, width: 682,
+                    imgtWidth: 400, imgtHeight: 266,
+                },
+
+                {
+                    src: "large/Artwork_Peacock_FoundMaterial_12.jpg",
+                    srct: "thumb/Artwork_Peacock_FoundMaterial_12.jpg",
+                    title: `Found-material artwork for “Rokuroo”, KGBV School, Gudupalle, Andhra Pradesh`,
+                    height: 1024, width: 682,
+                    imgtWidth: 400, imgtHeight: 266,
+                },
+
+                {
+                    src: "large/Artwork_Peacock_FoundMaterial_13.jpg",
+                    srct: "thumb/Artwork_Peacock_FoundMaterial_13.jpg",
+                    title: `Found-material artwork for “Rokuroo”, KGBV School, Gudupalle, Andhra Pradesh`,
+                    height: 1024, width: 682,
+                    imgtWidth: 400, imgtHeight: 266,
+                },
+
+                {
+                    src: "large/Artwork_Peacock_FoundMaterial_14.jpg",
+                    srct: "thumb/Artwork_Peacock_FoundMaterial_14.jpg",
+                    title: `Found-material artwork for “Rokuroo” by K. Chandana (Std. VIII), KGBV School, Gudupalle, Andhra Pradesh`,
+                    height: 1024, width: 682,
+                    imgtWidth: 400, imgtHeight: 266,
+                },
+
+                {
+                    src: "large/Artwork_RiverStones_Aina_01.jpg",
+                    srct: "thumb/Artwork_RiverStones_Aina_01.jpg",
+                    title: `River stone artwork by Sagar Vadhav (Std. VI), Gram Mangal School, Dahanu, Maharashtra`,
+                    height: 496, width: 800,
+                    imgtWidth: 248, imgtHeight: 400,
+                },
+
+                {
+                    src: "large/Artwork_RiverStones_Aina_02.jpg",
+                    srct: "thumb/Artwork_RiverStones_Aina_02.jpg",
+                    title: `River stone artwork (Std. VI), Gram Mangal School, Dahanu, Maharashtra`,
+                    height: 495, width: 800,
+                    imgtWidth: 247, imgtHeight: 400,
+                },
+
+                {
+                    src: "large/Artwork_RiverStones_Aina_03.jpg",
+                    srct: "thumb/Artwork_RiverStones_Aina_03.jpg",
+                    title: `River stone artwork (Std. VI), Gram Mangal School, Dahanu, Maharashtra`,
+                    height: 403, width: 800,
+                    imgtWidth: 201, imgtHeight: 400,
+                },
+
+                {
+                    src: "large/Artwork_Rooster_21.jpg",
+                    srct: "thumb/Artwork_Rooster_21.jpg",
+                    title: `Found-material artwork for “Rokuroo” (Std. VIII) KGBV School, Gudupalle, Andhra Pradesh`,
+                    height: 1024, width: 682,
+                    imgtWidth: 400, imgtHeight: 266,
+                },
+
+                {
+                    src: "large/Artwork_StrangeRainbowCow.jpg",
+                    srct: "thumb/Artwork_StrangeRainbowCow.jpg",
+                    title: `Artwork for “The Boy and the Calf”, Gram Mangal School, Dahanu, Maharashtra`,
+                    height: 1024, width: 723,
+                    imgtWidth: 400, imgtHeight: 282,
+                },
+
+                {
+                    src: "large/Artwork_Trees_04.jpg",
+                    srct: "thumb/Artwork_Trees_04.jpg",
+                    title: `Artwork by Jayauree (Std. VII), Agastya International Foundation, Kuppam, Andhra Pradesh`,
+                    height: 1024, width: 725,
+                    imgtWidth: 400, imgtHeight: 283,
+                },
+
+                {
+                    src: "large/Artwork_Trees_05.jpg",
+                    srct: "thumb/Artwork_Trees_05.jpg",
+                    title: ``,
+                    height: 739, width: 800,
+                    imgtWidth: 369, imgtHeight: 400,
+                },
+
+                {
+                    src: "large/Artwork_TreeTrunk.jpg",
+                    srct: "thumb/Artwork_TreeTrunk.jpg",
+                    title: ``,
+                    height: 461, width: 800,
+                    imgtWidth: 230, imgtHeight: 400,
+                },
+
+                {
+                    src: "large/Artwork_YoungWoman.jpg",
+                    srct: "thumb/Artwork_YoungWoman.jpg",
+                    title: `Artwork for “Maya and Aharika”, KGBV School, Gudupalle, Andhra Pradesh`,
+                    height: 1024, width: 723,
+                    imgtWidth: 400, imgtHeight: 282,
+                },
+
+                {
+                    src: "large/Artworkshop_GroupLearning_1.jpg",
+                    srct: "thumb/Artworkshop_GroupLearning_1.jpg",
+                    title: `Ruchi with students at Gram Mangal School, Dahanu, Maharashtra`,
+                    height: 532, width: 800,
+                    imgtWidth: 266, imgtHeight: 400,
+                },
+
+                {
+                    src: "large/Artworkshop_GroupLearning_2.jpg",
+                    srct: "thumb/Artworkshop_GroupLearning_2.jpg",
+                    title: `Ruchi & Gayathri with students at Gram Mangal School, Dahanu, Maharashtra`,
+                    height: 532, width: 800,
+                    imgtWidth: 266, imgtHeight: 400,
+                },
+
+                {
+                    src: "large/Artworkshop_GroupLearning_3.jpg",
+                    srct: "thumb/Artworkshop_GroupLearning_3.jpg",
+                    title: `Karan with students at GSS School, Khun, Himachal Pradesh`,
+                    height: 1024, width: 640,
+                    imgtWidth: 400, imgtHeight: 250,
+                },
+
+                {
+                    src: "large/Artworkshop_GroupLearning_4.jpg",
+                    srct: "thumb/Artworkshop_GroupLearning_4.jpg",
+                    title: `Pre-proficiency test by our facilitator, Gram Mangal School, Dahanu, Maharashtra`,
+                    height: 1024, width: 630,
+                    imgtWidth: 400, imgtHeight: 246,
+                },
+
+                {
+                    src: "large/Book_MonsterAndTheLittleBoy_AccordionFold.jpg",
+                    srct: "thumb/Book_MonsterAndTheLittleBoy_AccordionFold.jpg",
+                    title: `Box set of “The Monster and the Little Boy”, with three graded versions`,
+                    height: 1024, width: 682,
+                    imgtWidth: 400, imgtHeight: 266,
+                },
+
+                {
+                    src: "large/Bookbinding_Kuppam_1.jpg",
+                    srct: "thumb/Bookbinding_Kuppam_1.jpg",
+                    title: `Students binding their own copy of “Maya and Aharika”, KGBV School, Gudupalle, Andhra Pradesh`,
+                    height: 713, width: 800,
+                    imgtWidth: 356, imgtHeight: 400,
+                },
+
+                {
+                    src: "large/Bookbinding_Kuppam_2.jpg",
+                    srct: "thumb/Bookbinding_Kuppam_2.jpg",
+                    title: `Students binding their own copy of “Maya and Aharika”, KGBV School, Gudupalle, Andhra Pradesh`,
+                    height: 1024, width: 720,
+                    imgtWidth: 400, imgtHeight: 281,
+                },
+
+                {
+                    src: "large/Bookbinding_Kuppam_3.jpg",
+                    srct: "thumb/Bookbinding_Kuppam_3.jpg",
+                    title: `“The Flying Chair” book workshop, Agastya International Foundation, Kuppam, Andhra Pradesh`,
+                    height: 1024, width: 728,
+                    imgtWidth: 400, imgtHeight: 284,
+                },
+
+                {
+                    src: "large/BookSets.jpg",
+                    srct: "thumb/BookSets.jpg",
+                    title: `Box sets with graded versions of stories`,
+                    height: 1024, width: 768,
+                    imgtWidth: 400, imgtHeight: 300,
+                },
+
+                {
+                    src: "large/BoyAndCalf_BookSetAndOpenBook.jpg",
+                    srct: "thumb/BoyAndCalf_BookSetAndOpenBook.jpg",
+                    title: `Box set of “The Boy and the Calf”, with three graded versions`,
+                    height: 1024, width: 575,
+                    imgtWidth: 400, imgtHeight: 224,
+                },
+
+                {
+                    src: "large/BoyOnBicycle.jpg",
+                    srct: "thumb/BoyOnBicycle.jpg",
+                    title: ``,
+                    height: 1024, width: 682,
+                    imgtWidth: 400, imgtHeight: 266,
+                },
+
+                {
+                    src: "large/BunchOfStudents_Gazebo_GramMangal_1.jpg",
+                    srct: "thumb/BunchOfStudents_Gazebo_GramMangal_1.jpg",
+                    title: `Viewing animated short films on tablets, Gram Mangal School, Dahanu, Maharashtra`,
+                    height: 1024, width: 667,
+                    imgtWidth: 400, imgtHeight: 260,
+                },
+
+                {
+                    src: "large/BunchOfStudents_Gazebo_GramMangal_2.jpg",
+                    srct: "thumb/BunchOfStudents_Gazebo_GramMangal_2.jpg",
+                    title: `Gram Mangal School, Dahanu, Maharashtra`,
+                    height: 1024, width: 682,
+                    imgtWidth: 400, imgtHeight: 266,
+                },
+
+                {
+                    src: "large/CleverKalyani_1.jpg",
+                    srct: "thumb/CleverKalyani_1.jpg",
+                    title: `“Clever Kalyani” artwork, Agastya International Foundation, Kuppam, Andhra Pradesh`,
+                    height: 519, width: 800,
+                    imgtWidth: 259, imgtHeight: 400,
+                },
+
+                {
+                    src: "large/CleverKalyani_2.jpg",
+                    srct: "thumb/CleverKalyani_2.jpg",
+                    title: `“Clever Kalyani” artwork, Agastya International Foundation, Kuppam, Andhra Pradesh`,
+                    height: 1022, width: 800,
+                    imgtWidth: 400, imgtHeight: 313,
+                },
+
+                {
+                    src: "large/CleverKalyani_3.jpg",
+                    srct: "thumb/CleverKalyani_3.jpg",
+                    title: `“Clever Kalyani” artwork, Agastya International Foundation, Kuppam, Andhra Pradesh`,
+                    height: 1022, width: 800,
+                    imgtWidth: 400, imgtHeight: 313,
+                },
+
+                {
+                    src: "large/CleverKalyani_4.jpg",
+                    srct: "thumb/CleverKalyani_4.jpg",
+                    title: `“Clever Kalyani”, artwork Agastya International Foundation, Kuppam, Andhra Pradesh`,
+                    height: 1022, width: 800,
+                    imgtWidth: 400, imgtHeight: 313,
+                },
+
+                {
+                    src: "large/FishAndFun_Dahanu.jpg",
+                    srct: "thumb/FishAndFun_Dahanu.jpg",
+                    title: `Art and Craft workshop (Std. V-VI), Gram Mangal School, Dahanu, Maharashtra`,
+                    height: 1024, width: 680,
+                    imgtWidth: 400, imgtHeight: 265,
+                },
+
+                {
+                    src: "large/FlyingFish_1.jpg",
+                    srct: "thumb/FlyingFish_1.jpg",
+                    title: `Art and Craft workshop (Std. V-VI), Gram Mangal School, Dahanu, Maharashtra`,
+                    height: 1024, width: 680,
+                    imgtWidth: 400, imgtHeight: 265,
+                },
+
+                {
+                    src: "large/KulluValley_1.jpg",
+                    srct: "thumb/KulluValley_1.jpg",
+                    title: `Kullu Valley, near GSS School, Khun, Himachal Pradesh`,
+                    height: 500, width: 375,
+                    imgtWidth: 400, imgtHeight: 300,
+                },
+
+                {
+                    src: "large/KulluValley_3.jpg",
+                    srct: "thumb/KulluValley_3.jpg",
+                    title: `Kullu Valley, near GSS School, Khun, Himachal Pradesh`,
+                    height: 1024, width: 680,
+                    imgtWidth: 400, imgtHeight: 265,
+                },
+
+                {
+                    src: "large/MobileApp_Tactopus_1.jpg",
+                    srct: "thumb/MobileApp_Tactopus_1.jpg",
+                    title: `Mobile app reads aloud any page from a LeTS book`,
+                    height: 822, width: 800,
+                    imgtWidth: 400, imgtHeight: 389,
+                },
+
+                {
+                    src: "large/OpenBook_2.jpg",
+                    srct: "thumb/OpenBook_2.jpg",
+                    title: `A student's copy of “Rescue from the Claw”`,
+                    height: 1024, width: 728,
+                    imgtWidth: 400, imgtHeight: 284,
+                },
+
+                {
+                    src: "large/OpenBook_3.jpg",
+                    srct: "thumb/OpenBook_3.jpg",
+                    title: ``,
+                    height: 600, width: 800,
+                    imgtWidth: 300, imgtHeight: 400,
+                },
+
+                {
+                    src: "large/OpenBook_4.jpg",
+                    srct: "thumb/OpenBook_4.jpg",
+                    title: `“Khichidi” book, GSS School, Khun, Himachal Pradesh`,
+                    height: 1024, width: 768,
+                    imgtWidth: 400, imgtHeight: 300,
+                },
+
+                {
+                    src: "large/Peeking_1.jpg",
+                    srct: "thumb/Peeking_1.jpg",
+                    title: ``,
+                    height: 1024, width: 727,
+                    imgtWidth: 400, imgtHeight: 283,
+                },
+
+                {
+                    src: "large/Peeking_2.jpg",
+                    srct: "thumb/Peeking_2.jpg",
+                    title: ``,
+                    height: 517, width: 800,
+                    imgtWidth: 258, imgtHeight: 400,
+                },
+
+                {
+                    src: "large/RescueFromTheClaws_Page04.jpg",
+                    srct: "thumb/RescueFromTheClaws_Page04.jpg",
+                    title: `Student artwork, “Rescue from the Claw” (Original Telugu Version)`,
+                    height: 1024, width: 756,
+                    imgtWidth: 400, imgtHeight: 295,
+                },
+
+                {
+                    src: "large/RescueFromTheClaws_Page05.jpg",
+                    srct: "thumb/RescueFromTheClaws_Page05.jpg",
+                    title: `Student artwork, page design for “Rescue from the Claw” (Original Telugu Version)`,
+                    height: 1024, width: 756,
+                    imgtWidth: 400, imgtHeight: 295,
+                },
+
+                {
+                    src: "large/RescueFromTheClaws_Page10.jpg",
+                    srct: "thumb/RescueFromTheClaws_Page10.jpg",
+                    title: `Student artwork, page design for “Rescue from the Claw” (Original Telugu Version)`,
+                    height: 1024, width: 756,
+                    imgtWidth: 400, imgtHeight: 295,
+                },
+
+                {
+                    src: "large/Students_GramMangal_Aina.jpg",
+                    srct: "thumb/Students_GramMangal_Aina.jpg",
+                    title: `Gram Mangal School, Dahanu, Maharashtra`,
+                    height: 1024, width: 540,
+                    imgtWidth: 400, imgtHeight: 210,
+                },
+
+                {
+                    src: "large/StudentsInLibrary_03.jpg",
+                    srct: "thumb/StudentsInLibrary_03.jpg",
+                    title: `Aarti and teacher with students at Agastya International Foundation, Kuppam, Andhra Pradesh`,
+                    height: 1024, width: 682,
+                    imgtWidth: 400, imgtHeight: 266,
+                },
+
+                {
+                    src: "large/TeacherTrainingWorkshop_1.jpg",
+                    srct: "thumb/TeacherTrainingWorkshop_1.jpg",
+                    title: `Teacher training workshop, Agastya International Foundation, Kuppam, Andhra Pradesh`,
+                    height: 1024, width: 576,
+                    imgtWidth: 400, imgtHeight: 225,
+                },
+
+                {
+                    src: "large/TeacherTrainingWorkshop_2.jpg",
+                    srct: "thumb/TeacherTrainingWorkshop_2.jpg",
+                    title: `Teacher training workshop, Agastya International Foundation, Kuppam, Andhra Pradesh`,
+                    height: 1024, width: 576,
+                    imgtWidth: 400, imgtHeight: 225,
+                },
+
+                {
+                    src: "large/TeacherTrainingWorkshop_3.jpg",
+                    srct: "thumb/TeacherTrainingWorkshop_3.jpg",
+                    title: `Teacher training workshop at IIT Bombay`,
+                    height: 1024, width: 682,
+                    imgtWidth: 400, imgtHeight: 266,
+                },
+
+                {
+                    src: "large/TeacherTrainingWorkshop_4.jpg",
+                    srct: "thumb/TeacherTrainingWorkshop_4.jpg",
+                    title: `Teacher training workshop, Agastya International Foundation, Kuppam, Andhra Pradesh`,
+                    height: 1024, width: 682,
+                    imgtWidth: 400, imgtHeight: 266,
+                },
+
+                {
+                    src: "large/TeachingAndTesting_GramMangalAina_1.jpg",
+                    srct: "thumb/TeachingAndTesting_GramMangalAina_1.jpg",
+                    title: `Aarti testing proficiency levels, Gram Mangal School, Dahanu, Maharashtra`,
+                    height: 554, width: 800,
+                    imgtWidth: 277, imgtHeight: 400,
+                },
+
+                {
+                    src: "large/TeachingAndTesting_GramMangalAina_2.jpg",
+                    srct: "thumb/TeachingAndTesting_GramMangalAina_2.jpg",
+                    title: `Aarti testing proficiency levels, Gram Mangal School, Dahanu, Maharashtra`,
+                    height: 1024, width: 722,
+                    imgtWidth: 400, imgtHeight: 282,
+                },
+
+                {
+                    src: "large/TeachingAndTesting_GramMangalAina_3.jpg",
+                    srct: "thumb/TeachingAndTesting_GramMangalAina_3.jpg",
+                    title: `Listening to stories in English through animated short films, Gram Mangal School, Dahanu, Maharashtra`,
+                    height: 574, width: 800,
+                    imgtWidth: 287, imgtHeight: 400,
+                },
+
+                {
+                    src: "large/TeachingAndTesting_GramMangalAina_4.jpg",
+                    srct: "thumb/TeachingAndTesting_GramMangalAina_4.jpg",
+                    title: `Listening to stories in English through animated short films, Gram Mangal School, Dahanu, Maharashtra`,
+                    height: 528, width: 800,
+                    imgtWidth: 264, imgtHeight: 400,
+                },
+
+                {
+                    src: "large/TeachingAndTesting_GramMangalAina_5.jpg",
+                    srct: "thumb/TeachingAndTesting_GramMangalAina_5.jpg",
+                    title: `Listening to stories in English through animated short films, Gram Mangal School, Dahanu, Maharashtra`,
+                    height: 541, width: 800,
+                    imgtWidth: 270, imgtHeight: 400,
+                },
+
+                {
+                    src: "large/TeachingAndTesting_GramMangalAina_6.jpg",
+                    srct: "thumb/TeachingAndTesting_GramMangalAina_6.jpg",
+                    title: `Ruchi recording student's reading skill, Gram Mangal School, Dahanu, Maharashtra`,
+                    height: 1024, width: 633,
+                    imgtWidth: 400, imgtHeight: 247,
+                },
+
+                {
+                    src: "large/TeachingAndTesting_GramMangalAina_7.jpg",
+                    srct: "thumb/TeachingAndTesting_GramMangalAina_7.jpg",
+                    title: `Gayathri recording student's reading skill, Gram Mangal School, Dahanu, Maharashtra`,
+                    height: 1024, width: 649,
+                    imgtWidth: 400, imgtHeight: 253,
+                },
+
+                {
+                    src: "large/TeachingAndTesting_Sirigiripalli_8.jpg",
+                    srct: "thumb/TeachingAndTesting_Sirigiripalli_8.jpg",
+                    title: `Umesh recording student's reading skill, Sirigiripalli Village Library, Andhra Pradesh`,
+                    height: 1024, width: 741,
+                    imgtWidth: 400, imgtHeight: 289,
+                },
+
+                {
+                    src: "large/TheDrawingHand.jpg",
+                    srct: "thumb/TheDrawingHand.jpg",
+                    title: ``,
+                    height: 1024, width: 682,
+                    imgtWidth: 400, imgtHeight: 266,
+                },
+
+                {
+                    src: "large/WallPainting_Khun_1.jpg",
+                    srct: "thumb/WallPainting_Khun_1.jpg",
+                    title: `Student enjoying wall painting`,
+                    height: 1024, width: 671,
+                    imgtWidth: 400, imgtHeight: 262,
+                },
+
+                {
+                    src: "large/WallPainting_Khun_2.jpg",
+                    srct: "thumb/WallPainting_Khun_2.jpg",
+                    title: `The joy of painting on the walls`,
+                    height: 1024, width: 682,
+                    imgtWidth: 400, imgtHeight: 266,
+                },
+
+                {
+                    src: "large/WallPainting_Khun_3.jpg",
+                    srct: "thumb/WallPainting_Khun_3.jpg",
+                    title: `Ruchi with the wall painted by students`,
+                    height: 1024, width: 601,
+                    imgtWidth: 400, imgtHeight: 234,
+                },
+
+                {
+                    src: "large/WorkshopGroup_2.jpg",
+                    srct: "thumb/WorkshopGroup_2.jpg",
+                    title: `Aarti and students from KGBV School, Gudupalle at the Agastya International Foundation Library`,
+                    height: 1024, width: 682,
+                    imgtWidth: 400, imgtHeight: 266,
+                },
+
+                {
+                    src: "large/YoungIllustrator_Khun_1.jpg",
+                    srct: "thumb/YoungIllustrator_Khun_1.jpg",
+                    title: `GSS School, Khun, Himachal Pradesh`,
+                    height: 1024, width: 680,
+                    imgtWidth: 400, imgtHeight: 265,
+                },
+
+                {
+                    src: "large/YoungIllustrator_Khun_2.jpg",
+                    srct: "thumb/YoungIllustrator_Khun_2.jpg",
+                    title: `GSS School, Khun, Himachal Pradesh`,
+                    height: 1024, width: 682,
+                    imgtWidth: 400, imgtHeight: 266,
+                },
+
+                {
+                    src: "large/YoungIllustrator_Khun_3.jpg",
+                    srct: "thumb/YoungIllustrator_Khun_3.jpg",
+                    title: `GSS School, Khun, Himachal Pradesh`,
+                    height: 1024, width: 682,
+                    imgtWidth: 400, imgtHeight: 266,
+                },
+
+                {
+                    src: "large/YoungIllustrators_Khun_4.jpg",
+                    srct: "thumb/YoungIllustrators_Khun_4.jpg",
+                    title: `GSS School, Khun, Himachal Pradesh`,
+                    height: 1024, width: 680,
+                    imgtWidth: 400, imgtHeight: 265,
+                },
+            ],
+            // GALLERY AND THUMBNAIL LAYOUT
+            galleryMosaic: [                       // default layout
+                { r: 1, c: 1, h: 2, w: 2 },
+                { r: 1, c: 3, h: 1, w: 1 },
+                { r: 1, c: 4, h: 1, w: 1 },
+                { r: 1, c: 5, h: 1, w: 1 },
+                { r: 1, c: 6, h: 2, w: 1 },
+                { r: 2, c: 3, h: 1, w: 1 },
+                { r: 2, c: 4, h: 2, w: 2 },
+                { r: 3, c: 1, h: 1, w: 2 },
+                { r: 3, c: 3, h: 2, w: 1 },
+                { r: 3, c: 6, h: 1, w: 1 },
+                { r: 4, c: 1, h: 1, w: 2 },
+                { r: 4, c: 4, h: 1, w: 1 },
+                { r: 4, c: 5, h: 1, w: 2 },
+            ],
+            galleryMosaicXS: [                     // layout for XS width
+                { w: 2, h: 2, c: 1, r: 1 },
+                { w: 1, h: 1, c: 3, r: 1 },
+                { w: 1, h: 1, c: 3, r: 2 },
+                { w: 1, h: 2, c: 1, r: 3 },
+                { w: 2, h: 1, c: 2, r: 3 },
+                { w: 1, h: 1, c: 2, r: 4 },
+                { w: 1, h: 1, c: 3, r: 4 }
+            ],
+            galleryMosaicSM: [                     // layout for SM width
+                { w: 2, h: 2, c: 1, r: 1 },
+                { w: 1, h: 1, c: 3, r: 1 },
+                { w: 1, h: 1, c: 3, r: 2 },
+                { w: 1, h: 2, c: 1, r: 3 },
+                { w: 2, h: 1, c: 2, r: 3 },
+                { w: 1, h: 1, c: 2, r: 4 },
+                { w: 1, h: 1, c: 3, r: 4 }
+            ],
+
+            thumbnailAlignment: 'scaled',
+            thumbnailGutterWidth: 6, thumbnailGutterHeight: 6,
+            thumbnailBorderHorizontal: 0, thumbnailBorderVertical: 0,
+
+            thumbnailToolbarImage: null,
+            thumbnailToolbarAlbum: null,
+            thumbnailLabel: { display: false },
+
+            // DISPLAY ANIMATION
+            // for gallery
+            galleryDisplayTransitionDuration: 1500,
+            // for thumbnails
+            thumbnailDisplayTransition: 'none',
+            thumbnailDisplayTransitionDuration: 1200,
+            thumbnailDisplayTransitionEasing: 'easeInOutQuint',
+            thumbnailDisplayInterval: 60,
+
+            // THUMBNAIL HOVER ANIMATION
+            thumbnailBuildInit2: 'image_scale_1.30',
+            thumbnailHoverEffect2: 'thumbnail_scale_1.00_1.05_300|image_scale_1.15_1.00',
+            touchAnimation: true,
+            touchAutoOpenDelay: 500,
+
+            // LIGHTBOX
+            viewerToolbar: {
+                display: true,
+                standard: 'label',
+            },
+
+            // GALLERY THEME
+            galleryTheme: {
+                thumbnail: { background: '#111' },
+            },
+        });
+    });
+
+</script>
+</body>
+</html>

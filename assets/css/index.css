@@ -1,0 +1,180 @@
+html {
+  font-weight: 500;
+}
+
+body > .section {
+  /* This is only for index.html. Sections have images in the background, but not
+    as a background-image prop, for responsive reasons.
+    When multiple ".section"s are joined together, there is a thin line separating
+    them, because HTML elements because they were meant for text, and two empty divs
+    next to each other will leave that white line. Remove it by setting font size to zero.
+    Font-size is reset appropriately for inside elements.
+   */
+  font-size: 0;
+  position: relative;
+  width: 100%;
+}
+
+
+.body-text {
+  display: block;
+  width: 100%;
+  position: relative;
+  /* overflow: scroll; */
+}
+
+.body-text p {
+  margin-bottom: 1rem;
+}
+.body-text p:last-child {
+  margin-bottom: 0rem;
+}
+
+/* class common to all text wrappers */
+.text-wrapper {
+  font-family: "Hepta Slab", serif;
+  font-size: 1rem;
+  line-height: 160%;
+  z-index: 2;
+  text-align: left;
+  padding-right: 10px;
+  position: absolute;
+  /* overflow: scroll; */
+}
+.text-center {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+}
+
+#intro-text-wrapper {
+  width: 45%;
+  height: 16.5%;
+  color: rgb(56, 63, 57);
+  left: 53%;
+  top: 33%;
+}
+
+#logo-text-wrapper {
+  width: 40%;
+  top: 51%;
+  height: 17%;
+  color: rgb(56, 63, 57);
+  left: 60%;
+}
+
+h2 {
+  margin-bottom: 10px;
+}
+
+#author-text-wrapper {
+  width: 50%;
+  height: 10%;
+  color: rgb(56, 63, 57);
+  left: 53%;
+  top: 77%;
+}
+
+#our-authors {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+#books-text-wrapper {
+  width: 28%;
+  height: 18%;
+  color: rgb(56, 63, 57);
+  left: 31%;
+  top: 8%;
+}
+
+#book-sample {
+  display: flex;
+  flex-direction: column;
+  top: 10%;
+  left: 58%;
+  font-size: 0.8rem;
+  width: 42%;
+  height: 17.5%;
+  cursor: pointer;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+#book-sample:hover p {
+  transition: all 0.5s;
+  font-size: 1rem;
+  font-weight: bold;
+  /* background-color: yellow; */
+}
+
+#films-text-wrapper {
+  width: 50%;
+  height: 11%;
+  color: rgb(56, 63, 57);
+  left: 40%;
+  top: 29%;
+}
+
+
+.open-anim-video {
+	height:300px;
+	width:300px;
+  position: absolute;
+  display: inline-block;
+  top: 45%;
+  left: 65%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+
+#apps-text-wrapper {
+  width: 49%;
+  height: 8%;
+  color: rgb(56, 63, 57);
+  left: 50%;
+  top: 56.5%;
+}
+
+#other-sub-text-wrapper {
+  width: 53%;
+  height: 6%;
+  color: rgb(56, 63, 57);
+  left: 40%;
+  top: 65%;
+}
+
+.bg-img {
+  /*margin-bottom: 10px;  This is for debugging, for seeing the splits between the background images*/
+  width: 100%;
+  height: auto;
+}
+
+#intro-video {
+  /* background: red; */
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 86%;
+  left: 47%;
+  font-size: 0.8rem;
+  width: 43%;
+  height: 11.25%;
+  cursor: pointer;
+  z-index: 3;
+  justify-content: flex-end;
+  align-items: flex-end;
+  cursor: pointer;
+}
+
+.more-text-indicator {
+  box-shadow: 0 -1em 1em -1em rgb(90, 90, 52) inset;
+}

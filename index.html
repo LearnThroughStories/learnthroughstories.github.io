@@ -1,15 +1,226 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Learn Through Stories</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LeTS: Learn Through Stories</title>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5X773H3F3R"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-5X773H3F3R');
+  </script>
+
+  <link href="./assets/css/bookblock.css" rel="stylesheet">
+  <link href="assets/css/jquery.yu2fvl.css" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/base.css" />
+  <link rel="stylesheet" href="./assets/css/index.css" />
+  <link rel="stylesheet" href="./assets/css/books-base.css" />
+  <script>
+    function addMoreIndicatorIfOverflow(event) {
+      console.log({addMoreIndicatorIfOverflow: event.target});
+      let t = event.target;
+      if (t.clientHeight > 0 && (t.scrollHeight - t.scrollTop > t.clientHeight)) {
+        t.classList.add("more-text-indicator");
+      } else {
+        t.classList.remove("more-text-indicator");
+      }
+    }
+
+    function loadScriptAsync(src) {
+      return new Promise(function (resolve, reject) {
+        const scr = document.createElement('script');
+        var resolved = false;
+        scr.type = 'text/javascript';
+        scr.async = true;
+        scr.onerror =  (err) => reject("script " + src + " not loaded: Error: " + err, scr);
+        scr.onload = scr.onreadystatechange =  () => {
+          if (!resolved && (!this.readyState || this.readyState == 'complete')) {
+            resolved = true;
+            resolve();
+          }
+        };
+        scr.src = src;
+        document.body.append(scr);
+      });
+    }
+
+    async function loadScriptsAsync() {
+      var scripts = [
+        "assets/js/jquery-3.5.1.min.js",
+        "assets/js/modernizr.custom.js",
+        "assets/js/jquerypp.custom.js",
+        "assets/js/jquery.bookblock.js",
+        "assets/js/lets.js",
+        "assets/js/jquery.yu2fvl.js"];
+      for (const scr of scripts) {
+        await loadScriptAsync(scr);
+      }
+    }
+
+    // This function is called only when the large background image on the bottom half 
+    // of the page is loaded, so that we don't delay the first content paint time. 
+    function loadLazy() {
+      window.setTimeout(() => {
+        loadScriptsAsync().then(() => {
+          $(".play-1").each((i, el) => {
+            const jel = $(el);
+            jel.attr("href", jel.attr("data-href"));
+          });
+          $(".play-2").each((i, el) => {
+            const jel = $(el);
+            jel.attr("href", jel.attr("data-href"));
+          });
+
+          $(".play-1").yu2fvl({ minPaddingX: 100, minPaddingY: 100, closeText: "&times;" });
+          $(".play-2").yu2fvl({ minPaddingX: 100, minPaddingY: 100, closeText: "&times;" });
+
+          $(".text-center").each(function (i, tw) {
+            addMoreIndicatorIfOverflow({ target: tw }); // first time, on page load
+            // also, when each one is scrolled, or the page is resized.
+            tw.addEventListener("scroll", addMoreIndicatorIfOverflow, { passive: true });
+            window.addEventListener("resize", () => {
+              addMoreIndicatorIfOverflow({ target: tw });
+            });
+          });
+        });
+      }, 10);
+    }
+  </script>
+
 </head>
+
 <body>
-    <div class="logo">
-        <img src="images/poster-logo.jpg" alt="">
+  <div id="top-section" class="section">
+    <picture>
+      <source class="bg-img" media="(max-width: 900px)" width=900 height=1907 srcset="assets/img/bg-900-1.webp" type="image/webp">
+      <source class="bg-img" media="(max-width: 900px)" width=900 height=1907 srcset="assets/img/bg-900-1.jpg" type="image/jpeg">
+      <source class="bg-img" srcset="assets/img/bg-1200-1.webp" width="1200" height="2542" type="image/webp">
+      <img class="bg-img" src="./assets/img/bg-1200-1.jpg" width="1200" height="2542" />
+    </picture>
+    <nav id="navbar" style="position:absolute">
+      <div id="logo">
+        <a href="index.html"><img src="assets/img/lets-logo-120.png"></a>
+      </div>
+      <ul id="links" class="nav">
+        <li class="nav-item"><a href="process.html">OUR PROCESS</a></li>
+        <li class="nav-item"><a href="gallery.html">GALLERY</a></li>
+        <li class="nav-item"><a href="books.html">BOOKS</a></li>
+        <li class="nav-item"><a href="aboutus.html">ABOUT US</a></li>
+      </ul>
+    </nav>
+
+
+    <div id="intro-text-wrapper" class="text-wrapper">
+      <div class="text-center">
+        <div>
+          <div class="body-text">
+            <p>LeTS (Learn Through Stories) Foundation is a not-for-profit educational venture.</p>
+            <p>
+              It is a collaboration between design professionals and young students from far-flung parts of India. </p>
+            <p>Together, we create books.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
+    <div id="logo-text-wrapper" class="text-wrapper">
+      <div class="text-center">
+        <!-- <div> -->
+        <div class="body-text">
+          <p>
+            Students bring stories. We teach them storyboarding, illustration and book design in multi-day workshops.
+          </p>
+          <p>The very act of producing a book changes learners and their relationship with learning.</p>
+        </div>
+      </div>
+    </div>
+    <div id="author-text-wrapper" class="text-wrapper">
+      <h2 id="our-authors"> Our Authors</h2>
+    </div>
+  </div>
+  <div id="bottom-section" class="section">
+    <picture>
+      <source class="bg-img" media="(max-width: 900px)" width="900" height="1996" srcset="assets/img/bg-900-2.webp" type="image/webp">
+      <source class="bg-img" media="(max-width: 900px)" width="900" height="1996" srcset="assets/img/bg-900-2.jpg" type="image/jpeg">
+      <source class="bg-img" srcset="assets/img/bg-1200-2.webp" width="1200" height="2661" type="image/webp">
+      <img class="bg-img" onload="loadLazy()" src="./assets/img/bg-1200-2.jpg" width="1200" height="2661"/>
+    </picture>
+    <div id="books-text-wrapper" class="text-wrapper" >
+      <div class=text-center style="align-items:start">
+        <div>
+          <h2 id="our-books">Our Books</h2>
+          <div class="body-text">
+            <p>
+              Kids love these gorgeously produced books, with their names on the book jacket and crowding the credits
+              pages.
+            </p>
+            <p> Eyes and minds thus sensitized to quality production of their own work, it is not just words but worlds
+              they create anew.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="book-sample" class="text-wrapper" onclick="openBook('CleverKalyani')"> 
+      <p>Click here to see a sample book.</p>
+    </div>
+
+    <div id="book-open"></div> <!-- div for modal -->
+    <div id="films-text-wrapper" class="text-wrapper">
+      <div class="text-center">
+        <div>
+          <h2 id="our-films"> Our Films</h2>
+          <div class="body-text">
+            Some of our books are brought to new life as animated films with
+            voice-overs and subtitles, to offer another kind of immersive
+            learning experience.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p><a class="play-1 open-anim-video" href="#" data-href="https://www.youtube.com/embed/GJSGdhXDzOQ"></a></p>
+
+    <div id="apps-text-wrapper" class="text-wrapper">
+      <div class="text-center">
+        <div>
+          <h2 id="our-apps"> Our Apps</h2>
+          <div class="body-text">
+            <p>Our mobile app uses the phone camera to recognize any page of a LeTS book and read it out loud. </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="other-sub-text-wrapper" class="text-wrapper">
+      <div class="text-center">
+        <div class="body-text">
+          This approach is not for language alone.
+          <!-- We are working on other subjects, including science, geography etc.-->
+          We have begun work on science and geography, with plans for more!
+        </div>
+      </div>
+    </div>
+    <div id="intro-video" class="play-2" data-href="https://www.youtube.com/embed/drc0QWWHPXQ">
+      <div style="align-items:flex-end"> A short introduction by Prof. Alka Hingorani. </div>
+    </div>
+  </div>
+  <div id="footer">
+    <div id="logotext"> <img src="assets/img/ftr-logo.png"> </div>
+    <div id="social">
+      <a href="mailto:contactletsfoundation@gmail.com?body=Dear%20LeTS%20team,">
+        <span class="fa icon-mail"></span>
+      </a>
+      <a href="#"> <span class="fa icon-facebook"></span></a>
+      <a href="#"> <span class="fa icon-instagram"></span></a>
+      <a href="#"> <span class="fa icon-linkedin"></span></a>
+    </div>
+  </div>
+  <div style="height: 1rem; background-color: grey; width: 100%;"/>
 </body>
+
 </html>

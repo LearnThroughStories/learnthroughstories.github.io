@@ -1,0 +1,95 @@
+#book-open {
+    position: fixed;
+    display: none;
+    z-index: 20;
+    /* overflow: hidden; */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.7); /* Black w/ opacity */
+    /* background-color: white; */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  #book-open-inner {
+    position: relative;
+    display: flex;
+    background: white;
+  }
+  
+  /* Used where width is more constraining. All units are in vw, and aspect ratio is maintained*/
+  .bb-vw {
+    width: 80vw;
+    height: calc(80vw * 787 / 1024);
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Used where height is more constraining. All units are in vh */
+  .bb-vh {
+    /*top: 10vh;
+    left: 10vh;*/
+    margin-left: auto;
+    margin-right: auto;
+    height: 80vh;
+    width: calc(80vh * 1024 / 787);
+  }
+  
+  #bb-bookblock {
+    /* width/height set by .bb-vw or .bb-vh, depending on screen orientation.*/
+    font-size: 1rem;
+    position: relative;
+    z-index: 100;
+  
+    -webkit-perspective: 1300px;
+    perspective: 1300px;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 9px 20px 0 rgba(0, 0, 0, 0.25);
+    border-left: 1px solid grey;
+    border-bottom: 1px solid grey;
+    margin-top: 10vh;
+    margin-left: auto;
+    margin-right: auto;
+    /* background: white; */
+    cursor: pointer;
+  }
+
+  #end-of-sample {
+    visibility: hidden;
+    background: rgba(0, 0, 0, 0.793);
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    position: absolute;
+    z-index: 1000;
+    right: 0px;
+    bottom: 0px;
+  }
+  
+  #book-close {
+    z-index: 1000;
+    position: absolute;
+    right: -10px;
+    top: -15px;
+    width: 30px;
+    height: 30px;
+    font-family: sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-left: auto;
+    border-radius: 50%;
+    background: black;
+    color: white;
+    line-height: 30px;
+  }
+  
+  #book-close:hover,
+  #book-close:focus {
+    background: yellow;
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
