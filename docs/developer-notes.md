@@ -4,13 +4,15 @@ by Sriram Srinivasan (_firstname_@malhar.net)
 
 ## index.html
 
-HTML/CSS is designed around a block model. In its simplest design, responsive design depends on blocks moving around, the way sentences adjust and words move to the next line when the window width is reduced. However, we wanted to avoid the blocky look-and-feel;  We wanted a more organic feel where the artwork is not seemingly restricted to one block. At the same time, the design had to be responsive.
+HTML/CSS is designed around a block model. Responsive or fluid design is essentially a way for blocks to move around. Blocks (like images, or groups of elements) are like words in a sentence; they jostle for space on a line and move down vertially when the window is shrunk.
 
-The current design (at the time of release, July 15, 2021) is as follows. The artwork is a one large  composite image that is pegged to 100% width (and auto height, to preserve aspect ratio). The various text elements are positioned with "absolute" positioning and sizing (top%, left%) on this artwork, and given as much width and height as the space on the artwork would allow for the text to expand into, without the text bleeding into the next block.
+Unfortunately, it also lends a blocky look-and-feel to the site. We wanted a more organic feel where the artwork is not seemingly restricted to one block.  At the same time, the design had to be responsive.
 
-The artwork is a foreground image (&lt;img&gt;), not a background-image property, because we need the image to force the size of the container. The background-image property makes the image passive, and attempts to make do with whatever space is available to it. For this reason, all other components must have an explicit `z-index` greater than 1.
+The current design (at the time of release, July 15, 2021) is as follows. The artwork is a single large  composite image that is pegged to 100% width (and auto height, to preserve aspect ratio). On this canvas, the various text elements are positioned with "absolute" positioning and sizing (top%, left%) on this artwork, and given as much width and height as the space on the artwork would allow for the text to expand into, without the text bleeding into the next block.
 
-This scheme is responsive because the dimensional dependencies are as follows (read the arrow as "dictates")
+The artwork is a foreground image `<img>`, not a `background-image` property on the containing div. Using background-image property makes the image passive; it makes do with whatever space is available to it. Instead, we use the foregrounded image to force the size of its container.  Because of this,  all other components must be layered on top (`z-index` greater than 1).
+
+The scheme is responsive because the dimensional dependencies are as follows (read the arrow as "dictates")
 
     Width of browser window  -> 
        width of artwork  -> 
@@ -19,7 +21,7 @@ This scheme is responsive because the dimensional dependencies are as follows (r
               width and height of each text block, as they are expressed as percentages 
               of the container's corresponding dimensions. 
 
-When the window shrinks in width, everything adjusts proportionally.
+When the window shrinks in width, the artwork shrinks proportionally, and everything else atop does too.
 
 Each text block has the following form:
 
@@ -27,7 +29,7 @@ Each text block has the following form:
          <div class="text-center">
             <div class="body-text">
 
-The _xxx_-text-wrapper contains the position and size of that particular block. In general, the `text-wrapper` class contains all the generic properties of all such absolutely positioned units. The `text-center` class is meant to center the text vertically in the allotted height, and be a scroll container for the contained body-text.
+The _xxx_-text-wrapper contains the position and size of that particular block, and the `text-wrapper` class contains the properties common to all such absolutely positioned units. The `text-center` class is meant to center the text vertically in the allotted height, and be a scroll container for the contained body-text.
 
 ## books.html
 
@@ -39,9 +41,9 @@ The openBook() function in lets.js adds a bb-bookblock div as a popup only after
 
 ## gallery.html
 
-The gallery is a simple application of the nanogallery package (http://nanogallery2.nanostudio.org). To avoid typing/copying a whole lot of html boiler plate, I have used `scripts/items.py` to convert `assets/img/gallery/descriptions.txt` the html format required. That way gallery images and descriptions are kept simple and in sync.
+The gallery is a simple application of the nanogallery package (http://nanogallery2.nanostudio.org). To avoid typing or copying a whole lot of html boiler plate, I have used the script `scripts/items.py` to convert `assets/img/gallery/descriptions.txt` to the html format required by nanogallery. In other words, most of `gallery.html` is auto-generated from `descriptions.text`. That way gallery images and descriptions are kept simple and in sync.
 
-Also, to experiment with different mosaic layout designs, the script `table2mosaic.py` helps one to convert the mosaic drawn on https://www.tablesgenerator.com/text_tables to the relevant mosaic format expected by nanogallery. 
+Further, to experiment with different mosaic layout designs, I wrote `scripts/table2mosaic.py` to convert a visual representation of the mosaic to the format required by nanogallery. The visual representation is provided by https://www.tablesgenerator.com/text_tables. 
 
 ## aboutus.html
 
@@ -60,15 +62,15 @@ The first three are specific to the front page (index.html)
 
 3. The artwork jpg file is huge, which slows down the website. A light background image (like a paper texture) compresses better because it is not meant to stand out, and hence compresses 10x better. Regardless, the site is extraordinarily image heavy and relies on very good network accessibility. This may be ok for the primarily urban target audience.
 
-4. Hosting on github.io has been very convenient. It is surprisingly fast, because it defers to fastly's servers and CMS. There are a few downsides though. github keeps the cache expiry time as 10min. Also, because it is a git site, I didn't feel like polluting the source with the distribution variant, to do standard performance-oriented things such as tree-shaking, code minifying and bundling commonly clustered pieces of code together. Also, since it is a static site, all common code gets duplicated (like header and footer). 
+4. Hosting on github.io has been very convenient. It is surprisingly fast, because it defers to fastly's servers and CMS. There are a few downsides though. Github keeps the cache expiry time at a paltry 10 min, so heavy resources are constantly being reloaded. Also, because it is a git site, I didn't feel like polluting the source with the distribution variant, to do standard performance-oriented things such as tree-shaking, code minifying and bundling commonly clustered pieces of code together. Finally, since it is a static site, all common code gets duplicated (like header and footer). 
 
 5. It is best to constrain `img` elements `div`s to constrain them. That way, images can be set to 100% the width of their wrapper and the height can either be constrained using object-fit:contain or height:auto to maintain their aspect ratio. This permits the the wrapper to be sized independently.
 
-6. In some cases (the bio pics in about us), there is one way to ensure that the `div` surrounding the `img` has the exact aspect ratio as the underlying image. We want the div to be responsive to changes to its parent, but maintain the same aspect ratio as its contained image. We use the property that padding-top/bottom is a function of the *width*. So, we set the height of the div to 0, but the padding-top to be the appropriate fraction of the width. For example, `padding-top:50%` makes the element half as tall as the width. This div has not content of its own; its sole purpose is to act as a frame for a nested div. The latter is positioned in absolute terms, and is thus responsive as well. This trick is from https://css-tricks.com/aspect-ratio-boxes/
+6. In some cases (the bio pics in aboutus.html), there is one way to ensure that the `div` surrounding the `img` has the exact aspect ratio as the underlying image. We want the div to be responsive to changes to its parent, but maintain the same aspect ratio as its contained image. We use the property that `padding-top/bottom` is a function of the *width*. So, we set the height of the div to 0, but the `padding-top` to be the appropriate fraction of the width. For example, `padding-top:50%` makes the element half as tall as the width, which gives a 2:1 ratio. This div has no content of its own; its sole purpose is to act as a frame for a nested div, which in turn contains the image. All their aspect ratios are fiex, but the system is responsive. This trick is from https://css-tricks.com/aspect-ratio-boxes/. I wish browsers would hurry up and support the aspect-ratio property, instead of relying on such excrecence.
 
 7. At the time of release, I hadn't paid particular attention to image resolution, and had resized all thumbnails as 200x200, which was a mistake. On retina displays, some images are blurry.
 
-8. Having to position an image on top of a background-image is painful and expensive. Suppose the background image is a watercolour wash. On top of this we want to show an image of a person. But suppose the background of this image clashes with the underlying watercolour wash. We have no option but to eliminate the background. That is, we have to cut and extract the person out of the image on top, save it as a png file and overlay on the page background.  The png format is needed for its support of transparent pixels. Unfortunately, the png format is lossless, so the files are huge (10x). We can't merge the png file into the background because we want the top images to move fluidly with the text. I experimented with AVIF files (which supports lossy compression and transparent pixels), but the results were not very good and the format AVIF is not supported sufficiently by most mainstream browsers yet, so I deferred this decision with the aim of revisiting it soon. 
+8. Having to position an image on top of a background-image is painful and expensive. Suppose the background image is a watercolour wash. On top of this we want to show an image of a person. But suppose the background of this person image clashes with the underlying watercolour wash. We have no option but to eliminate the background. That is, we have to cut and extract the person out of the image on top, save it as a png file and overlay on the page background.  The png format is needed for its support of transparent pixels. Unfortunately, the png format is lossless, which makes the files huge (10x of what a jpg could be). We can't merge the png file into the background because we want the top images to move fluidly with the text. I experimented with AVIF files (which supports lossy compression and transparent pixels), but the results were not very good and the format AVIF is not supported sufficiently by most mainstream browsers yet, so I deferred this decision with the aim of revisiting it soon. 
 
 
 # Performance
