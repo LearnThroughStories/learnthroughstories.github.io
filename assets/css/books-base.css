@@ -56,9 +56,10 @@
     cursor: pointer;
   }
 
-  #end-of-sample {
-    visibility: hidden;
-    background: rgba(0, 0, 0, 0.793);
+  #click-to-flip {
+    animation-duration: 4s;
+    animation-name: appear;
+    background: rgba(112, 110, 110, 0.7);
     color: white;
     font-size: 1.2rem;
     font-weight: bold;
@@ -66,6 +67,38 @@
     z-index: 1000;
     right: 0px;
     bottom: 0px;
+    opacity: 100%;
+    padding: 10px;
+  }
+
+  @keyframes appear {
+    0%   {opacity: 0%;}
+    15%  {opacity: 0%;}
+    100% {opacity: 100%;}
+  }
+
+  
+
+  #end-of-sample {
+    display: none;
+    background: rgba(112, 110, 110, 0.7);
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 500;
+    position: absolute;
+    z-index: 1000;
+    right: 0px;
+    bottom:0px;
+    padding: 10px;
+    animation-duration: 6s;
+    animation-name: appear-disappear;
+    opacity: 0%;
+  }
+  
+  @keyframes appear-disappear {
+    0%   {opacity: 100%;}
+    10%  {opacity: 100%;}
+    100% {opacity: 0%;}
   }
   
   #book-close {

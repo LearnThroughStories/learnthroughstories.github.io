@@ -32,10 +32,11 @@ function Page() {
   }; // playAudio
 
   var afterFlip = function (old, page, isLimit) {
+    $("#click-to-flip").css({display: "none"});
     if (isLimit && page > 0) {
-        $("#end-of-sample").css({visibility: "visible"});
+        $("#end-of-sample").css({display: "block"});
     } else {
-      $("#end-of-sample").css({visibility: "hidden"});
+      $("#end-of-sample").css({display: "none"});
     }
     playAudio(old, page, isLimit);
   }
@@ -117,6 +118,7 @@ function getViewportHeight() {
 const template = `
 <div id='bb-bookblock' class='bb-bookblock'>
     <div id="book-close" onclick="closeBook()"> &times;<\/div>
+    <div id="click-to-flip">click to open</div>
     <div id="end-of-sample">end of sample</div>
     <div class="bb-item"> <img src="assets/img/books/BOOKNAME/00.png" \/><\/div>
     <div class="bb-item"> <img src="assets/img/books/BOOKNAME/01.jpg" \/><\/div>

@@ -70,9 +70,16 @@ body > .section {
   left: 60%;
 }
 
-h2 {
-  margin-bottom: 10px;
+/* h2 {
+  margin-bottom: 8px;
+} */
+
+@media screen and (max-width: 500px) {
+  h2 {
+    margin-bottom: 5px;
+  }
 }
+
 
 #author-text-wrapper {
   width: 50%;
@@ -89,10 +96,10 @@ h2 {
 
 #books-text-wrapper {
   width: 28%;
-  height: 18%;
+  height: 20%;
   color: rgb(56, 63, 57);
   left: 31%;
-  top: 8%;
+  top: 10%;
 }
 
 #book-sample {
@@ -138,17 +145,17 @@ h2 {
 
 #apps-text-wrapper {
   width: 49%;
-  height: 8%;
+  height: 9%;
   color: rgb(56, 63, 57);
   left: 50%;
-  top: 56.5%;
+  top: 56%;
 }
 
 #other-sub-text-wrapper {
-  width: 53%;
+  width: 55%;
   height: 6%;
   color: rgb(56, 63, 57);
-  left: 40%;
+  left: 34%;
   top: 65%;
 }
 
@@ -156,6 +163,7 @@ h2 {
   /*margin-bottom: 10px;  This is for debugging, for seeing the splits between the background images*/
   width: 100%;
   height: auto;
+  pointer-events: none;
 }
 
 #intro-video {

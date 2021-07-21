@@ -23,9 +23,10 @@
   <link rel="stylesheet" href="./assets/css/books-base.css" />
   <script>
     function addMoreIndicatorIfOverflow(event) {
-      console.log({addMoreIndicatorIfOverflow: event.target});
       let t = event.target;
-      if (t.clientHeight > 0 && (t.scrollHeight - t.scrollTop > t.clientHeight)) {
+      let fs = parseInt($(t).css("font-size"));
+
+      if (t.clientHeight > 0 && (t.scrollHeight - t.scrollTop - fs > t.clientHeight)) {
         t.classList.add("more-text-indicator");
       } else {
         t.classList.remove("more-text-indicator");
@@ -157,11 +158,10 @@
           <h2 id="our-books">Our Books</h2>
           <div class="body-text">
             <p>
-              Children love these gorgeously produced books, with their names on the book jacket and crowding the credits
-              pages.
+              Children love these gorgeously produced books, with their names featuring on the book jackets and crowding the credits.
+             Sensitized by the creative process and quality production, it is not just words but worlds that our young authors create anew.
+
             </p>
-            <p> Eyes and minds thus sensitized to quality production of their own work, it is not just words but worlds
-              they create anew.</p>
           </div>
         </div>
       </div>
@@ -191,7 +191,7 @@
         <div>
           <h2 id="our-apps"> Our Apps</h2>
           <div class="body-text">
-            <p>Our mobile app uses the phone camera to recognize any page of a LeTS book and read it out loud. </p>
+            <p>A user of our mobile app may point her phone camera at any page of a LeTS book and listen to it read out loud.</p>
           </div>
         </div>
       </div>
@@ -199,14 +199,11 @@
     <div id="other-sub-text-wrapper" class="text-wrapper">
       <div class="text-center">
         <div class="body-text">
-          This approach is not for language alone.
-          <!-- We are working on other subjects, including science, geography etc.-->
-          We have begun work on science and geography, with plans for more!
-        </div>
+          Our model now moves beyond children creating content for learning language to explore science and geography, with plans for more!        </div>
       </div>
     </div>
     <div id="intro-video" class="play-2" data-href="https://www.youtube.com/embed/drc0QWWHPXQ?cc_load_policy=1&cc_lang_pref=en">
-      <div style="align-items:flex-end"> A short introduction by Prof. Alka Hingorani. </div>
+      <div style="align-items:flex-end"> The LeTS Story - by Prof. Alka Hingorani. </div>
     </div>
   </div>
   <div id="footer">
