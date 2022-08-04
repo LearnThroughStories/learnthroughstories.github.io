@@ -150,21 +150,22 @@ body {
 
 #links a {
   text-decoration: none;
-  color: rgb(122, 116, 116);
+  text-align: center;
+  color: rgb(104, 99, 99);
   /* text-transform: uppercase; */
   font-weight: 700;
   padding: 0.5em;
 }
 
 #links .donate {
-  box-shadow: inset 0 0 0 1em #f6b900;
   color: black;
-  background-color: #f6b900;
+  background-color: #FFCC00;
   background-clip: border-box;
 }
 
 #links .donate:hover{
   color: green;
+  background-color: #;
 }
 
 #links a:hover {
