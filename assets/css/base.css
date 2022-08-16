@@ -248,3 +248,14 @@ h2 {
   color: #994e20;
 }
 
+#privacy {
+    height: 1rem;
+    background-color: lightgrey;
+    width: 100%;
+    text-align:right;
+    font-size: 0.7rem;
+}
+
+#privacy a {
+    color: black;
+}
