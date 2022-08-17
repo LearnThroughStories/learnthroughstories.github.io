@@ -248,7 +248,7 @@ h2 {
   color: #994e20;
 }
 
-#privacy {
+#policies {
     height: 1rem;
     background-color: lightgrey;
     width: 100%;
@@ -256,6 +256,6 @@ h2 {
     font-size: 0.7rem;
 }
 
-#privacy a {
+#policies a {
     color: black;
 }
