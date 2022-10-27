@@ -256,6 +256,7 @@ h2 {
     font-size: 0.7rem;
 }
 
-#policies a {
+#policies * {
     color: black;
+    padding-left: 2em;
 }
