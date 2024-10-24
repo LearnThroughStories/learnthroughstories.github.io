@@ -1,0 +1,28 @@
+#gov-container {
+  width: 100%;
+
+  background-image: 
+    -webkit-image-set(
+      url(../img/default-bg-1200.webp) 1x,
+      url(../img/default-bg-1200.jpg) 1x
+    );
+  background-image: 
+    image-set(
+      url(../img/default-bg-1200.webp) 1x,
+      url(../img/default-bg-1200.jpg) 1x
+    );
+
+  text-align: start;
+  line-height: 150%;
+}
+
+#gov-yearly-statements {
+  padding-top: 2rem;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.doc {
+  padding-left: 2rem;
+}
