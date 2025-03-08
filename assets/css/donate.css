@@ -112,6 +112,7 @@
 .qr-section img {
   height: auto;
   display: block;
+  max-width: 200px;
 }
 
 .qr-section p {
