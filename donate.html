@@ -45,9 +45,22 @@
 
         <div class="donate">
             <p>
-                Thank you for considering donating to the Learn Through Stories foundation. Every little bit helps.
-                Here is
-                a rough guide. There are two ways to donate to the LeTS foundation.</p>
+                Thank you for considering donating to the Learn Through Stories foundation. 
+                Here is a rough guide for what your donations can enable: 
+                <ul>
+                    <li>
+                        Rs. 2500: 
+                    </li>
+                    <li>
+                        Rs. 10000:
+                    </li>
+                    <li>
+                        Rs. 20000:
+                    </li>
+                </ul>
+            </p>
+                
+            <p> There are two ways to donate to the LeTS foundation.</p>
 
 
             <h4>Option 1: Transfer through RazorPay.</h4>
@@ -66,14 +79,14 @@
             <div class="donation-container">
                 <div class="donation-form">
                     <form id="donationForm">
+                        <label for="amount">Amount</label>
+                        <input type="number" id="amount" name="amount" required min="1">
+
                         <label for="name">Name</label>
                         <input type="text" id="name" name="name" required>
 
                         <label for="email">Email</label>
                         <input type="email" id="email" name="email" required>
-
-                        <label for="amount">Amount</label>
-                        <input type="number" id="amount" name="amount" required min="1">
 
                         <label for="phone">Phone</label>
                         <input type="tel" id="phone" name="phone" required>
@@ -94,7 +107,9 @@
             </div>
             <!-- Hidden Donation Details -->
             <div id="donations-details-outer" class="hidden">
-                <p> Thank you! Please scan the UPI QR code, or, transfer to the IDFC account shown below.</p>
+                <p id="save-ok"> Thank you! Please scan the UPI QR code, or, transfer to the IDFC account shown below.</p>
+                <p id="save-error" class="hidden"> Terribly sorry! We were unable to save the details you entered above. Can you please send the information to us by email to <a href="mailto:admin@learnthroughstories.org">admin@learnthroughstories.org</a>? It will help us correlate your information with your donation. Apologies again.
+                </p>
                 <div class="donation-details">
                     <div class="qr-section">
                         <p style="text-align: center;"><strong>UPI ID: learn@idfcbank</strong></p>
@@ -113,7 +128,20 @@
         </div>
     </div>
     <script>
-        document.getElementById('saveButton').addEventListener('click', function () {
+        function showResponse(ok) {
+            saveOk = document.getElementById('save-ok');
+            saveErr = document.getElementById('save-error');
+            if (ok) {
+                saveOk.classList.remove("hidden");
+                saveErr.classList.add("hidden");
+            } else {
+                saveOk.classList.add("hidden");
+                saveErr.classList.remove("hidden");
+            }
+        }
+        document.getElementById('saveButton').addEventListener('click', function (event) {
+            event.preventDefault();
+            showResponse(true);
             const name = document.getElementById('name').value.trim();
             const email = document.getElementById('email').value.trim();
             const phone = document.getElementById('phone').value.trim();
@@ -150,7 +178,33 @@
 
             if (pan && !address) {
                 alert("Address is necessary for tax-exemption certificate")
+                return;
             }
+
+            
+            data = {};
+            data.name = name;
+            data.email = email;
+            data.phone = phone;
+            data.amount = amount;
+            data.pan = pan;
+            data.address = address;
+            url = "https://script.google.com/macros/s/AKfycbybDPA6WkyWEEeRNAlGgygKUjWFpEaFOcnC122qzd6gYjpwaqaTlrWXQ-pdPE_RAuXB/exec";
+            fetch(url, {
+                method: "POST",
+                // mode: "no-cors", // to prevent CORS errors
+                redirect: "follow",
+                body: JSON.stringify(data),
+                headers: { 
+                    "Content-Type": "text/plain", 
+                }
+            })
+            .then(response => 
+               {
+                ok = response.ok;
+                showResponse(ok);
+               })
+            .catch(error => console.error("Error:", error));
 
             donationDetails = document.getElementById('donations-details-outer');
             donationDetails.classList.remove('hidden');

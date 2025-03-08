@@ -19,6 +19,10 @@
   margin-right: auto;
 }
 
+#save-error {
+  color: #bc3020;
+  font-weight: 500;
+}
 .donate h4 {
   margin-top: 20px;
   margin-bottom: 10px;
