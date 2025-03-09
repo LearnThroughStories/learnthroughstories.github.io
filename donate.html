@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="0;url=https://rzp.io/rzp/XTjHPM6">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LeTS: Learn Through Stories. About Us.</title>
@@ -16,12 +17,6 @@
     </script>
     <link rel="stylesheet" href="./assets/css/base.css">
     <link rel="stylesheet" href="assets/css/donate.css">
-    <script src="assets/js/jquery-3.5.1.min.js"></script>
-    <style>
-        .donate strong {
-            margin-right: 0.5rem;
-        }
-    </style>
 </head>
 
 <body>
@@ -38,184 +33,15 @@
                 <li class="nav-item active-page">DONATE</a></li>
             </ul>
         </nav>
-
         <h2>
             Donate to LeTS!
         </h2>
 
         <div class="donate">
-            <p>
-                Thank you for donating to the LeTS (Learn Through Stories) Foundation.
-            </p>
-            <br>
-            <p>
-                Please feel free to give as much as you wish. As a rough guide, here's what some of your amounts can deliver:
-                <ul>
-                    <li>
-                        Rs. 2500: a set of four LeTS books to a village library
-                    </li>
-                    <li>
-                        Rs. 10000: a set of four LeTS books each to four village libraries
-                    </li>
-                    <li>
-                        Rs. 25000: partial cost of a children's workshop in a rural school
-                    </li>
-                </ul>
-            </p>
-                
-            <p> There are two ways to donate.</p>
-
-
-            <h4>Option 1: Transfer through RazorPay.</h4>
-
-            <p> This will transfer you to a service that collects donations on our behalf in exchange for a small
-                commission.</p>
-            <p><a href="https://rzp.io/rzp/XTjHPM6">Click here</a></p>
-
-            <h4>Option 2: Direct Transfer (via UPI/NEFT)</h4>
-            <p>
-                You can also donate via UPI or bank-to-bank transfer via NEFT. This is commission-free. Please fill
-                in the details below and click on Save. The UPI QR code and associated bank details will then be
-                displayed.
-            </p>
-
-            <div class="donation-container">
-                <div class="donation-form">
-                    <form id="donationForm">
-                        <label for="amount">Amount</label>
-                        <input type="number" id="amount" name="amount" required min="1">
-
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required>
-
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
-
-                        <label for="phone">Phone</label>
-                        <input type="tel" id="phone" name="phone" required>
-
-                        <label for="pan">PAN (only if 80G certificate required)</label>
-                        <input type="text" id="pan" name="pan">
-
-                        <label for="address">Address (only if 80G certificate required)</label>
-                        <textarea id="address" name="address" rows="4"></textarea>
-
-                        <button type="button" id="saveButton">Save</button>
-                    </form>
-                </div>
-
-                <div class="donation-image">
-                    <img src="assets/img/neha.jpg" alt="Learn Through Stories">
-                </div>
-            </div>
-            <!-- Hidden Donation Details -->
-            <div id="donations-details-outer" class="hidden">
-                <p id="save-ok"> Thank you! Please scan the UPI QR code, or, transfer to the IDFC account shown below.</p>
-                <p id="save-error" class="hidden"> Terribly sorry! We were unable to save the details you entered above. Can you please send the information to us by email to <a href="mailto:admin@learnthroughstories.org">admin@learnthroughstories.org</a>? It will help us correlate your information with your donation. Apologies again.
-                </p>
-                <div class="donation-details">
-                    <div class="qr-section">
-                        <p style="text-align: center;"><strong>UPI ID: learn@idfcbank</strong></p>
-                        <img src="assets/img/qr.jpg" alt="QR Code for UPI">
-                    </div>
-                    <div class="bank-details">
-                        <p><strong>NEFT Bank-to-bank transfer</strong></p>
-                        <p>Account Name: Learn Through Stories Foundation</p>
-                        <p>Bank Name: IDFC First Bank</p>
-                        <p>Account No: 10207955690</p>
-                        <p>IFSC Code: IDFB0040109</p>
-                        <p>Branch: Mulund, Mumbai</p>
-                    </div>
-                </div>
-            </div>
+            This page will be automatically redirected to Razorpay, our payment provider. If for some reason this does not happen, 
+            please <a href="https://rzp.io/rzp/XTjHPM6"><strong>click here</strong></a>. 
         </div>
     </div>
-    <script>
-        function showResponse(ok) {
-            saveOk = document.getElementById('save-ok');
-            saveErr = document.getElementById('save-error');
-            if (ok) {
-                saveOk.classList.remove("hidden");
-                saveErr.classList.add("hidden");
-            } else {
-                saveOk.classList.add("hidden");
-                saveErr.classList.remove("hidden");
-            }
-        }
-        document.getElementById('saveButton').addEventListener('click', function (event) {
-            event.preventDefault();
-            showResponse(true);
-            const name = document.getElementById('name').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const phone = document.getElementById('phone').value.trim();
-            const amount = document.getElementById('amount').value.trim();
-            const pan = document.getElementById('pan').value.trim();
-            const address = document.getElementById('address').value.trim();
-
-            const panRegex = /^[A-Z]{5}[0-9]{4}[A-Z]$/;
-
-            if (!name) {
-                alert("Name cannot be blank.");
-                return;
-            }
-
-            if (!email || !email.includes('@')) {
-                alert("Please enter a valid email address.");
-                return;
-            }
-
-            if (!phone) {
-                alert("Phone number cannot be blank.");
-                return;
-            }
-
-            if (!amount || isNaN(amount) || Number(amount) <= 0) {
-                alert("Please enter a valid donation amount greater than zero.");
-                return;
-            }
-
-            if (pan && !panRegex.test(pan)) {
-                alert("Invalid PAN format. Please enter a valid PAN (e.g., ABCDE1234F).");
-                return;
-            }
-
-            if (pan && !address) {
-                alert("Address is necessary for tax-exemption certificate")
-                return;
-            }
-
-            
-            data = {};
-            data.name = name;
-            data.email = email;
-            data.phone = phone;
-            data.amount = amount;
-            data.pan = pan;
-            data.address = address;
-            // V6 URL. 
-            url = "https://script.google.com/macros/s/AKfycbzv3DkeHZGr-R6D2J1UmMGBMw4LaXFNSMxBMkO7uEmASRcX6IyUqbPbmioSk8YhKUun/exec";
-            fetch(url, {
-                method: "POST",
-                // mode: "no-cors", // to prevent CORS errors
-                redirect: "follow",
-                body: JSON.stringify(data),
-                headers: { 
-                    "Content-Type": "text/plain", 
-                }
-            })
-            .then(response => 
-               {
-                ok = response.ok;
-                showResponse(ok);
-               })
-            .catch(error => console.error("Error:", error));
-
-            donationDetails = document.getElementById('donations-details-outer');
-            donationDetails.classList.remove('hidden');
-            donationDetails.scrollIntoView({ behavior: "smooth", block: "start" });
-
-        });
-    </script>
 
 </body>
 
